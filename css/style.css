@@ -73,7 +73,7 @@ p {
 
 .img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 /* 
@@ -86,6 +86,27 @@ END RESET
 COMMON BLOCK
 ====================================
 */
+.container {
+  /* Phone screen >= 320px */
+  min-width: 320px;
+  max-width: 428px;
+  padding: 0 15px;
+  margin: 0 auto;
+  /* outline: 2px solid tomato; */
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    /* Tablet screen >= 768px */
+    max-width: 778px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    /* Desctop screen >= 1158px */
+    max-width: 1158px;
+  }
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -106,17 +127,31 @@ COMMON BLOCK
   font-size: 16px;
   line-height: 1.5;
 }
-
-/* 
-====================================
-END COMMON BLOCK
-====================================
-*/
-/* 
-====================================
-TITLE
-====================================
-*/
+/* text for all pages */
+.examples-title,
+.team-title,
+.customers-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* logo block (for all pages) */
+.logo-header,
+.logo-footer {
+  font-family: Raleway, cursive;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+/* Title */
 .title {
   color: var(--navy-blue);
   font-weight: 500;
@@ -124,58 +159,7 @@ TITLE
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
-/* 
-==============================================
-title examples title and team title index.html
-==============================================
-*/
 
-/* @media screen and (min-width: 768px)
-@media screen and (min-width: 1200px) */
-
-/* Phone screen-------------------------- */
-.examples {
-  display: none;
-}
-
-/* ---------------------------------------- */
-/* Tablet screen--------------------------- */
-@media screen and (min-width: 768px) {
-}
-/* ----------------------------------------- */
-/* Desctop screen-------------------------- */
-@media screen and (min-width: 1200px) {
-  .examples {
-    display: block;
-  }
-
-  .examples-title,
-  .team-title,
-  .customers-title {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.1;
-    text-align: center;
-    letter-spacing: 0.02em;
-  }
-  .text {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  /* logo block (for all pages) */
-  .logo-header,
-  .logo-footer {
-    font-family: Raleway, cursive;
-  }
-  .logo-header {
-    margin-right: 76px;
-  }
-}
-
-/* ----------------------------------------- */
-
-/* ==================================================*/
 /* 
 =======================================================
 BTN (for all pages)
@@ -202,39 +186,37 @@ BTN (for all pages)
   transition-duration: var(--main-tr-dur);
   transition-timing-function: var(--main-tr-t-f);
 }
+/* 
+====================================
+END COMMON BLOCK
+====================================
+*/
+/* 
+==============================================
+title examples title and team title index.html
+==============================================
+*/
 
-.container {
-  /* Phone screen >= 320px */
-  min-width: 320px;
-  max-width: 428px;
-  padding: 0 15px;
-  margin: 0 auto;
-  outline: 2px solid tomato;
+/* Phone screen-------------------------- */
+.examples {
+  display: none;
 }
-
+/* Tablet screen--------------------------- */
 @media screen and (min-width: 768px) {
-  .container {
-    /* Tablet screen >= 768px */
-    max-width: 778px;
-  }
 }
+/* Desctop screen-------------------------- */
 @media screen and (min-width: 1200px) {
-  .container {
-    /* Desctop screen >= 1158px */
-    max-width: 1158px;
+  .examples {
+    display: block;
   }
 }
+/* ==================================================*/
 
-/* =======================================================*/
 /* 
 ===========================================================
 HEADER BLOCK (FOR ALL PAGES)
 ===========================================================
 */
-/* .header {
-  padding-top: 24px;
-  padding-bottom: 24px;
-} */
 .header {
   border-bottom: 1px solid var(--cornflower);
 }
@@ -260,13 +242,13 @@ HEADER BLOCK (FOR ALL PAGES)
   padding-top: 24px;
   padding-bottom: 24px;
 }
-/*
-================================================================
-studio-portfolio-contacts (NAV HEADER AND ADDRESS)
-================================================================
-*/
+.ustomers-icons {
+  fill: var(--navy-blue);
+}
+/* studio-portfolio-contacts (NAV HEADER AND ADDRESS)*/
 .header-nav {
   margin-right: auto;
+  display: none;
 }
 
 .nav-link {
@@ -287,10 +269,13 @@ studio-portfolio-contacts (NAV HEADER AND ADDRESS)
   bottom: -1px;
 }
 /* mail-tel */
+.header-address {
+  display: none;
+}
+
 .address-list {
   display: flex;
   align-items: center;
-  gap: 40px;
 }
 .address-link {
   font-weight: 400;
@@ -304,6 +289,56 @@ studio-portfolio-contacts (NAV HEADER AND ADDRESS)
 .address-link:focus {
   color: var(--ocean);
 }
+
+.burger-menu-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+.burger-menu-icon {
+}
+
+@media screen and (min-width: 768px) {
+  .header-nav {
+    display: flex;
+  }
+
+  .burger-menu-btn {
+    display: none;
+  }
+  .header-address {
+    display: block;
+  }
+  .address-list {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .address-link {
+    padding: 0;
+  }
+
+  .header-nav {
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .burger-menu-btn {
+    display: none;
+  }
+  .address-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .header-nav {
+    margin-left: 76px;
+  }
+}
+
 /* 
 =======================================================================================
 FOOTER BLOCK (FOR ALL PAGES)
@@ -312,13 +347,12 @@ FOOTER BLOCK (FOR ALL PAGES)
 .footer {
   color: var(--cornflower);
   background-color: var(--navy-blue);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 .footer-box {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  display: block;
+  text-align: center;
 }
 .footer-web-logo {
   color: var(--iris);
@@ -326,12 +360,22 @@ FOOTER BLOCK (FOR ALL PAGES)
 .footer-studio-logo {
   color: var(--cloud);
 }
+
+.footer-information {
+  width: 268px;
+  height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .footer-text {
   margin-top: 16px;
-  width: 264px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
 }
 .footer-sm-box {
-  max-width: 208px;
+  /* max-width: 208px; */
+  margin-top: 72px;
 }
 .sm-text {
   font-weight: 500;
@@ -364,12 +408,16 @@ FOOTER BLOCK (FOR ALL PAGES)
   background-color: var(--green);
 }
 
+.subscribe-form {
+  margin-top: 72px;
+}
 .subscribe-box {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  gap: 24px;
+  flex-direction: column;
+  /* gap: 24px; */
+  gap: 16px;
 }
 .subscribe-label {
 }
@@ -411,6 +459,78 @@ FOOTER BLOCK (FOR ALL PAGES)
 .subscribe-btn:hover,
 .subscribe-btn:focus {
   background-color: var(--ocean);
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .footer-box {
+    text-align: start;
+  }
+  /* div for footer informatio and footer sm-box */
+  .footer-info-sm {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  /* Block logo with text-------------------- */
+  .footer-information {
+    width: 268px;
+    height: 110px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .footer-text {
+  }
+
+  /* --------------------------------------- */
+  /* Social Media Block----------------------- */
+
+  .footer-sm-box {
+    /* max-width: 208px; */
+    margin-top: 0;
+  }
+  /* Form Block------------------------------- */
+  .subscribe-form {
+    width: 453px;
+    height: 80px;
+  }
+  .subscribe-box {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .footer-box {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .footer-text {
+    margin-top: 16px;
+    width: 264px;
+  }
+
+  .footer-sm-box {
+    max-width: 208px;
+  }
+
+  .subscribe-form {
+    margin-top: 0;
+  }
+  .footer-info-sm {
+    gap: 120px;
+  }
 }
 
 /* ===================================================================================
@@ -524,7 +644,7 @@ index.html/FEATURE section
 .feature-item:nth-last-child(-n + 1) {
   margin-bottom: 0;
 }
-.sm-icons {
+.feature-icons {
   display: none;
 }
 
@@ -591,7 +711,7 @@ index.html/FEATURE section
     background-color: var(--cloud);
     border-radius: 4px;
   }
-  .sm-icons {
+  .feature-icons {
     display: block;
   }
   .feature-caption {
@@ -705,7 +825,6 @@ index.html/examples section
     row-gap: 64px;
     column-gap: 24px;
   }
-
 }
 /* --------------------------------- */
 /* Desctop screen------------------- */
@@ -724,13 +843,13 @@ index.html/examples section
   padding-bottom: 96px;
 }
 
-.customers-title{
+.customers-title {
   margin-bottom: 72px;
-font-weight: 700;
-font-size: 36px;
-line-height: 1.1;
-text-align: center;
-letter-spacing: 0.02em;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
 .customers-list {
@@ -769,28 +888,27 @@ letter-spacing: 0.02em;
 }
 
 /* Tablet screen------------------------------- */
-@media screen and (min-width: 768px){
-.customers-list {
-width: calc((100% - 24px * 4)/1);
-margin-left: auto;
-margin-right: auto;
-}
+@media screen and (min-width: 768px) {
+  .customers-list {
+    width: calc((100% - 24px * 4) / 1);
+    margin-left: auto;
+    margin-right: auto;
+  }
   .customers-link {
-  width: 168px;
-}
+    width: 168px;
+  }
 }
 /* ------------------------------------------------ */
 /* Desctop screen---------------------------------- */
-@media screen and (min-width: 1200px){
-.customers {
-  
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-.customers-list {
-  gap: 24px;
-flex-wrap: nowrap;
-}
+@media screen and (min-width: 1200px) {
+  .customers {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .customers-list {
+    gap: 24px;
+    flex-wrap: nowrap;
+  }
 }
 /* ------------------------------------------------------------------------------- */
 
@@ -1097,4 +1215,118 @@ MODAL WINDOW FOR HERO SECTION
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
+}
+/* 
+=============================================================================
+MOBILE MENU
+=============================================================================
+*/
+.menu-toggle {
+  min-height: 24px;
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 32px;
+  background-color: var(--white);
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #fff;
+}
+
+.mobile-menu-list {
+  margin-top: 80px;
+  margin-left: 40px;
+}
+
+.mobile-menu-link {
+  display: block;
+  color: var(--navy-blue);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  /* margin-bottom: 40px; */
+}
+.mobile-menu-item {
+  margin-bottom: 40px;
+}
+.mobile-menu-item:last-child {
+  margin-bottom: 0px;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus {
+  color: var(--iris);
+}
+.address-list-mobile {
+  margin-bottom: 48px;
+}
+.address-list-mobile {
+  margin-top: 284px;
+}
+.address-item-tel {
+  margin-bottom: 40px;
+}
+.address-link-tel {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.1;
+}
+.address-link-tel:hover {
+  color: var(--iris);
+}
+.address-link-mail {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--slate);
+}
+.mobile-icon-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 58px;
+}
+
+.sm-menu-link {
+  background: var(--iris);
+  fill: var(--cloud);
+  border: none;
 }
