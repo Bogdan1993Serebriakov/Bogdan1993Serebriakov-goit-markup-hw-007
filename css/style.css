@@ -192,27 +192,6 @@ END COMMON BLOCK
 ====================================
 */
 /* 
-==============================================
-title examples title and team title index.html
-==============================================
-*/
-
-/* Phone screen-------------------------- */
-.examples {
-  display: none;
-}
-/* Tablet screen--------------------------- */
-@media screen and (min-width: 768px) {
-}
-/* Desctop screen-------------------------- */
-@media screen and (min-width: 1200px) {
-  .examples {
-    display: block;
-  }
-}
-/* ==================================================*/
-
-/* 
 ===========================================================
 HEADER BLOCK (FOR ALL PAGES)
 ===========================================================
@@ -541,7 +520,7 @@ index.html/HERO section
 =====================================================================================
 */
 .hero {
-  max-width: 428px;
+  max-width: 1440px;
   height: 432px;
   text-align: center;
   margin-left: auto;
@@ -550,7 +529,7 @@ index.html/HERO section
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/main-page/hero.jpg);
+    url(../images/main-page/hero_mob@1x.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -558,9 +537,64 @@ index.html/HERO section
   padding-top: 112px;
   padding-bottom: 112px;
 }
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: radial-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/main-page/hero_mob@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .hero {
+    background-image: radial-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/main-page/hero_tab@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: radial-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/main-page/hero_tab@2x.jpg);
+  }
+}
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: radial-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/main-page/hero_desk@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: radial-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/main-page/hero_desk@2x.jpg);
+  }
+}
+}
 /* Phone screen------------------------- */
 .hero-title {
-  width: 318px;
+  /* width: 318px; */
   text-align: center;
   margin: 0 auto;
   color: var(--white);
@@ -589,7 +623,7 @@ index.html/HERO section
 @media screen and (min-width: 768px) {
   .hero {
     /* Tablet screen */
-    max-width: 768px;
+    /* max-width: 768px; */
     height: 436px;
     padding-top: 112px;
     padding-bottom: 108px;
@@ -604,13 +638,14 @@ index.html/HERO section
     margin-top: 40px;
   }
 }
+
 /* -------------------------------------- */
 /* Desctop screen------------------------ */
 
 @media screen and (min-width: 1200px) {
   /* Desctop screen */
   .hero {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     height: 600px;
     padding-top: 188px;
     padding-bottom: 188px;
@@ -623,7 +658,10 @@ index.html/HERO section
     margin-top: 48px;
   }
 }
+
 /* ------------------------------------- */
+/* HERO photo--------------------------- */
+
 /* 
 ================================================================================
 index.html/FEATURE section 
@@ -734,15 +772,24 @@ index.html/examples section
 ====================================================================================
 */
 .examples {
+  display: none;
   padding-top: 0;
 }
-.examples-title {
-  margin-bottom: 72px;
-}
+
 .examples-list {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+/* Tablet screen--------------------------- */
+@media screen and (min-width: 768px) {
+}
+/* Desctop screen-------------------------- */
+@media screen and (min-width: 1200px) {
+  .examples {
+    display: block;
+    margin-bottom: 120px;
+  }
 }
 /* ------------------------------------------------------------------------ */
 /* index.html/TEAM section--------------------------------------------------- */
@@ -765,13 +812,13 @@ index.html/examples section
 
 .team-title {
   margin-bottom: 72px;
-
   font-weight: 700;
   font-size: 36px;
   line-height: 1.1;
   text-align: center;
   letter-spacing: 0.02em;
 }
+
 .team-list {
   display: flex;
   align-items: center;
@@ -851,15 +898,6 @@ index.html/examples section
   padding-bottom: 96px;
 }
 
-.customers-title {
-  margin-bottom: 72px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.1;
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-
 .customers-list {
   display: flex;
   align-items: center;
@@ -867,7 +905,6 @@ index.html/examples section
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 72px;
-  /* gap: 24px; */
 }
 .customers-link {
   display: flex;
@@ -921,11 +958,16 @@ index.html/examples section
 
 /* porfolio.html/btn-filter portfolio block -----------------------------------------*/
 
+
+
+
+
 .filter-list {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 24px;
+
   /* відступ між елементами */
   margin-top: 96px;
   margin-bottom: 72px;
@@ -945,10 +987,11 @@ index.html/examples section
   background-color: var(--ocean);
 }
 
-/* porfolio.html/portfolio exaples block  */
+
 .portfolio {
-  padding-top: 72px;
-  padding-bottom: 120px;
+  /* padding-top: 72px;
+  padding-bottom: 120px; */
+width: 396px;
 }
 .thumb {
   position: relative;
@@ -997,17 +1040,18 @@ index.html/examples section
 }
 
 /* --------- */
-
-.potfolio-list {
+  .potfolio-list {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   row-gap: 48px;
-  column-gap: 24px;
-  padding-bottom: 120px;
+  /* column-gap: 24px;
+  padding-bottom: 120px;   */
+  padding-bottom: 48px;
 }
+
 .portfolio-item {
-  width: 360px;
+  width: 369px;
 }
 .portfolio-link {
   transition-duration: var(--main-tr-dur);
@@ -1018,6 +1062,10 @@ index.html/examples section
   display: block;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+.portfolio-img {
+  width: 369px;
+  display: block;
 }
 
 .portfolio-wrapper {
@@ -1030,6 +1078,27 @@ index.html/examples section
 
 .portfolio-text {
   margin-top: 8px;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 1200px) {
+  .potfolio-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
+  padding-bottom: 120px;  
+}
+.portfolio-item {
+  width: 360px;
+}
+.portfolio-img {
+  width: 360px;
+  display: block;
+}
 }
 
 /* 
@@ -1070,9 +1139,9 @@ MODAL WINDOW FOR HERO SECTION
   transition: transform 150ms ease 400ms, opacity 150ms ease 400ms;
 }
 @media (max-width: 427px) {
-.modal {
-  width: 95%;
-}
+  .modal {
+    width: 95%;
+  }
 }
 
 .backdrop.is-hidden .modal {
@@ -1320,8 +1389,8 @@ MOBILE MENU
 }
 @media (max-width: 320px) {
   .address-link-tel {
-  font-size: 24px;
-}
+    font-size: 24px;
+  }
 }
 
 .address-item-mail {
@@ -1337,11 +1406,9 @@ MOBILE MENU
   gap: 58px;
 }
 @media (max-width: 320px) {
-.mobile-icon-list {
-  gap: 33px;
-}
-
-
+  .mobile-icon-list {
+    gap: 33px;
+  }
 }
 .sm-menu-link {
   background: var(--iris);
