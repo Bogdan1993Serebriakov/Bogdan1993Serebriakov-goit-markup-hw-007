@@ -222,7 +222,7 @@ HEADER BLOCK (FOR ALL PAGES)
   padding-top: 24px;
   padding-bottom: 24px;
 }
-.ustomers-icons {
+.customers-icons {
   fill: var(--navy-blue);
 }
 /* studio-portfolio-contacts (NAV HEADER AND ADDRESS)*/
@@ -260,7 +260,6 @@ HEADER BLOCK (FOR ALL PAGES)
 .address-link {
   font-weight: 400;
   font-style: normal;
-  font-size: 16px;
   line-height: 1.5;
   transition-duration: var(--main-tr-dur);
   transition-timing-function: var(--main-tr-t-f);
@@ -279,8 +278,6 @@ HEADER BLOCK (FOR ALL PAGES)
   justify-content: center;
   align-items: center;
   margin-left: auto;
-}
-.burger-menu-icon {
 }
 
 @media screen and (min-width: 768px) {
