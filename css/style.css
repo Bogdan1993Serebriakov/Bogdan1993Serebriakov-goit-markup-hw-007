@@ -318,6 +318,10 @@ HEADER BLOCK (FOR ALL PAGES)
   .header-nav {
     margin-left: 76px;
   }
+.address-link {
+    /* padding: 0; */
+    font-size: 16px;
+  }
 }
 
 /* 
@@ -363,7 +367,7 @@ FOOTER BLOCK (FOR ALL PAGES)
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 .sm-footer-list {
   display: flex;
@@ -399,8 +403,7 @@ FOOTER BLOCK (FOR ALL PAGES)
   /* gap: 24px; */
   gap: 16px;
 }
-.subscribe-label {
-}
+
 .subscribe-input {
   width: 264px;
   height: 40px;
@@ -595,6 +598,7 @@ index.html/HERO section
 }
 /* Phone screen------------------------- */
 .hero-title {
+  width: 320px;
   text-align: center;
   margin: 0 auto;
   color: var(--white);
@@ -751,6 +755,7 @@ index.html/FEATURE section
     width: 264px;
     background-color: var(--cloud);
     border-radius: 4px;
+    margin-bottom: 8px;
   }
   .feature-icons {
     display: block;
@@ -788,7 +793,7 @@ index.html/examples section
 @media screen and (min-width: 1200px) {
   .examples {
     display: block;
-    margin-bottom: 120px;
+    padding-bottom: 120px;
   }
 }
 /* ------------------------------------------------------------------------ */
