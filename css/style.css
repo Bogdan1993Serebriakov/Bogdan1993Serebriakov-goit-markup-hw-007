@@ -595,7 +595,7 @@ index.html/HERO section
 }
 /* Phone screen------------------------- */
 .hero-title {
-  width: 320px;
+  max-width: 320px;
   text-align: center;
   margin: 0 auto;
   color: var(--white);
@@ -631,7 +631,7 @@ index.html/HERO section
   }
 
   .hero-title {
-    width: 494px;
+    max-width: 494px;
     font-size: 55px;
     line-height: 1;
   }
@@ -895,6 +895,10 @@ index.html/examples section
 
 /* index.html / Custumers section------------------------------------------------------ */
 /* phone screen----------------------------- */
+/*  */
+
+
+
 .customers {
   padding-top: 96px;
   padding-bottom: 96px;
@@ -932,6 +936,11 @@ index.html/examples section
 .customers-link:hover,
 .customers-link:focus {
   border: 1px solid var(--ocean);
+}
+@media screen and (max-width: 426px) {
+.customers-link {
+width: 135px;
+}
 }
 
 /* Tablet screen------------------------------- */
